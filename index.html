@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101114">
+  <meta name="description" content="AMF Academy helps VR players improve through structured practice, coaching, teamwork, and a positive competitive community. Always Moving Forward.">
+  <meta property="og:title" content="AMF Academy | Always Moving Forward">
+  <meta property="og:description" content="Train with purpose. Build your game. Move forward together.">
+  <meta property="og:type" content="website">
+  <title>AMF Academy | Always Moving Forward</title>
+  <style>
+    :root {
+      --bg: #0c0d10;
+      --panel: #14161b;
+      --panel-2: #191c22;
+      --text: #f4f6f8;
+      --muted: #a8adb8;
+      --green: #b8ff3b;
+      --green-dark: #7bbd16;
+      --purple: #a855f7;
+      --line: rgba(255,255,255,.11);
+      --max: 1160px;
+      --radius: 22px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 84px; }
+    body {
+      margin: 0; background:
+        radial-gradient(ellipse at 80% 0%, rgba(168,85,247,.13), transparent 32rem),
+        radial-gradient(ellipse at 0% 20%, rgba(184,255,59,.08), transparent 28rem),
+        var(--bg);
+      color: var(--text); font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+    }
+    a { color: inherit; }
+    .wrap { width: min(var(--max), calc(100% - 40px)); margin-inline: auto; }
+    .skip { position: absolute; top: -50px; left: 12px; background: var(--green); color: #101114; padding: 10px 14px; z-index: 100; border-radius: 8px; }
+    .skip:focus { top: 12px; }
+    header {
+      position: sticky; top: 0; z-index: 50; backdrop-filter: blur(18px);
+      background: rgba(12,13,16,.82); border-bottom: 1px solid var(--line);
+    }
+    .nav { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; font-weight: 900; letter-spacing: -.04em; }
+    .mark {
+      width: 42px; height: 42px; border-radius: 13px; display: grid; place-items: center;
+      background: linear-gradient(135deg, var(--green), #e0ff9b); color: #11130e;
+      font-size: 14px; font-weight: 1000; box-shadow: 0 0 30px rgba(184,255,59,.15);
+    }
+    .brand span small { display: block; color: var(--muted); font-size: 10px; letter-spacing: .18em; font-weight: 800; margin-top: -3px; }
+    .navlinks { display: flex; align-items: center; gap: 26px; }
+    .navlinks a { color: #d5d8df; text-decoration: none; font-size: 13px; font-weight: 750; transition: color .2s; }
+    .navlinks a:hover { color: var(--green); }
+    .navlinks .nav-cta { color: #11130e; background: var(--green); padding: 11px 16px; border-radius: 11px; }
+    .menu-btn { display: none; border: 1px solid var(--line); background: var(--panel); color: white; padding: 9px 12px; border-radius: 10px; font-size: 18px; }
+    .hero { padding: 92px 0 74px; position: relative; overflow: hidden; }
+    .hero-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 52px; align-items: center; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 9px; color: var(--green); text-transform: uppercase; letter-spacing: .18em; font-size: 11px; font-weight: 900; }
+    .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--green); box-shadow: 0 0 12px var(--green); }
+    h1 { font-size: clamp(46px, 6.8vw, 82px); line-height: .98; letter-spacing: -.075em; margin: 21px 0; max-width: 720px; }
+    h1 em { color: var(--green); font-style: normal; }
+    .hero p { color: var(--muted); max-width: 590px; font-size: 17px; margin: 0 0 28px; }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 9px; border: 1px solid transparent; border-radius: 12px; padding: 14px 19px; font-size: 14px; font-weight: 850; text-decoration: none; transition: transform .2s, border-color .2s, background .2s; }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary { background: var(--green); color: #11130e; }
+    .btn-primary:hover { background: #ceff76; }
+    .btn-secondary { border-color: var(--line); color: white; background: rgba(255,255,255,.03); }
+    .btn-secondary:hover { border-color: rgba(184,255,59,.55); }
+    .hero-art { min-height: 430px; position: relative; display: grid; place-items: center; }
+    .orb { position: absolute; width: 320px; height: 320px; border-radius: 50%; background: radial-gradient(circle at 30% 25%, rgba(184,255,59,.18), transparent 55%), radial-gradient(circle at 70% 70%, rgba(168,85,247,.3), transparent 55%); filter: blur(4px); }
+    .emblem { width: min(100%, 390px); aspect-ratio: 1; border: 1px solid rgba(184,255,59,.35); border-radius: 34% 66% 56% 44% / 43% 35% 65% 57%; transform: rotate(-8deg); position: relative; display: grid; place-items: center; background: linear-gradient(145deg, rgba(255,255,255,.05), rgba(255,255,255,.01)); box-shadow: 0 0 0 14px rgba(184,255,59,.025), 0 0 90px rgba(168,85,247,.1), inset 0 0 70px rgba(184,255,59,.04); }
+    .emblem:before, .emblem:after { content: ""; position: absolute; inset: 20px; border: 1px solid rgba(168,85,247,.5); border-radius: 30% 70% 45% 55% / 55% 35% 65% 45%; }
+    .emblem:after { inset: 42px; border-color: rgba(255,255,255,.12); transform: rotate(25deg); }
+    .emblem-inner { transform: rotate(8deg); text-align: center; position: relative; z-index: 1; }
+    .emblem-inner strong { display: block; font-size: clamp(64px, 9vw, 106px); line-height: .9; letter-spacing: -.1em; color: var(--green); text-shadow: 0 0 40px rgba(184,255,59,.2); }
+    .emblem-inner span { display: block; margin-top: 17px; letter-spacing: .28em; font-size: 11px; font-weight: 900; }
+    .float-tag { position: absolute; padding: 12px 15px; background: rgba(20,22,27,.88); border: 1px solid var(--line); border-radius: 14px; backdrop-filter: blur(10px); font-size: 12px; font-weight: 800; box-shadow: 0 14px 40px rgba(0,0,0,.25); }
+    .float-tag small { display: block; color: var(--muted); font-size: 10px; font-weight: 650; }
+    .tag-one { top: 58px; right: -3px; }
+    .tag-two { bottom: 58px; left: 0; }
+    .strip { border-block: 1px solid var(--line); background: rgba(255,255,255,.018); }
+    .strip-inner { display: grid; grid-template-columns: repeat(3, 1fr); }
+    .strip-item { padding: 24px 20px; text-align: center; border-right: 1px solid var(--line); }
+    .strip-item:last-child { border-right: 0; }
+    .strip-item strong { display: block; font-size: 14px; letter-spacing: .02em; }
+    .strip-item span { display: block; color: var(--muted); font-size: 12px; margin-top: 4px; }
+    section { padding: 88px 0; }
+    .section-head { max-width: 690px; margin-bottom: 34px; }
+    .kicker { color: var(--purple); text-transform: uppercase; letter-spacing: .18em; font-size: 11px; font-weight: 900; }
+    h2 { font-size: clamp(32px, 4.4vw, 51px); line-height: 1.04; letter-spacing: -.06em; margin: 12px 0 15px; }
+    .section-head p, .body-copy { color: var(--muted); font-size: 16px; margin: 0; }
+    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .card { padding: 27px; border-radius: var(--radius); border: 1px solid var(--line); background: linear-gradient(145deg, rgba(255,255,255,.045), rgba(255,255,255,.015)); min-height: 230px; transition: transform .2s, border-color .2s; }
+    .card:hover { transform: translateY(-4px); border-color: rgba(184,255,59,.3); }
+    .card-icon { width: 44px; height: 44px; border-radius: 13px; display: grid; place-items: center; background: rgba(184,255,59,.1); color: var(--green); font-size: 21px; margin-bottom: 23px; }
+    .card h3 { margin: 0 0 9px; font-size: 19px; letter-spacing: -.03em; }
+    .card p { color: var(--muted); margin: 0; font-size: 14px; }
+    .split { display: grid; grid-template-columns: .92fr 1.08fr; gap: 64px; align-items: center; }
+    .principles { display: grid; gap: 13px; }
+    .principle { display: flex; gap: 16px; padding: 19px; border: 1px solid var(--line); border-radius: 16px; background: rgba(255,255,255,.025); }
+    .check { flex: 0 0 28px; height: 28px; border-radius: 9px; background: rgba(184,255,59,.12); color: var(--green); display: grid; place-items: center; font-weight: 900; }
+    .principle h3 { margin: 0 0 4px; font-size: 15px; }
+    .principle p { margin: 0; color: var(--muted); font-size: 13px; }
+    .path { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; counter-reset: path; }
+    .step { position: relative; padding: 25px; border-radius: 18px; background: var(--panel); border: 1px solid var(--line); }
+    .step-num { font-size: 12px; font-weight: 900; color: var(--green); letter-spacing: .16em; }
+    .step h3 { font-size: 18px; margin: 12px 0 8px; }
+    .step p { margin: 0; color: var(--muted); font-size: 14px; }
+    .callout { border-radius: 26px; padding: clamp(28px, 5vw, 54px); border: 1px solid rgba(184,255,59,.23); background: radial-gradient(ellipse at 100% 0%, rgba(168,85,247,.18), transparent 38%), linear-gradient(135deg, rgba(184,255,59,.08), rgba(255,255,255,.02)); display: flex; align-items: center; justify-content: space-between; gap: 32px; }
+    .callout h2 { max-width: 620px; margin-top: 10px; }
+    .callout p { color: var(--muted); max-width: 600px; margin-bottom: 0; }
+    .faq { max-width: 850px; display: grid; gap: 10px; }
+    details { border: 1px solid var(--line); background: rgba(255,255,255,.025); border-radius: 14px; padding: 0 19px; }
+    summary { list-style: none; cursor: pointer; padding: 18px 30px 18px 0; font-weight: 800; font-size: 14px; position: relative; }
+    summary::-webkit-details-marker { display: none; }
+    summary:after { content: "+"; position: absolute; right: 0; top: 14px; color: var(--green); font-size: 22px; }
+    details[open] summary:after { content: "−"; }
+    details p { color: var(--muted); font-size: 14px; margin: 0; padding: 0 0 18px; }
+    footer { border-top: 1px solid var(--line); padding: 32px 0; color: var(--muted); font-size: 12px; }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 18px; }
+    .footer-links { display: flex; gap: 18px; flex-wrap: wrap; }
+    .footer-links a { text-decoration: none; }
+    .footer-links a:hover { color: var(--green); }
+    .note { font-size: 12px; color: #818793; margin-top: 15px; }
+    :focus-visible { outline: 2px solid var(--green); outline-offset: 4px; }
+    @media (max-width: 850px) {
+      .hero-grid, .split { grid-template-columns: 1fr; }
+      .hero { padding-top: 65px; }
+      .hero-art { min-height: 360px; }
+      .emblem { width: 310px; }
+      .cards { grid-template-columns: 1fr 1fr; }
+      .split { gap: 30px; }
+      .callout { align-items: flex-start; flex-direction: column; }
+      .navlinks { gap: 16px; }
+    }
+    @media (max-width: 640px) {
+      .wrap { width: min(var(--max), calc(100% - 28px)); }
+      .nav { min-height: 68px; }
+      .menu-btn { display: inline-flex; }
+      .navlinks { display: none; position: absolute; left: 14px; right: 14px; top: 75px; padding: 15px; border: 1px solid var(--line); border-radius: 16px; background: #14161b; flex-direction: column; align-items: stretch; gap: 0; }
+      .navlinks.open { display: flex; }
+      .navlinks a { padding: 13px 10px; }
+      .navlinks .nav-cta { text-align: center; margin-top: 6px; }
+      h1 { font-size: clamp(46px, 14vw, 66px); }
+      .hero p { font-size: 15px; }
+      .hero-art { min-height: 310px; }
+      .emblem { width: 260px; }
+      .tag-one { right: -2px; top: 26px; }
+      .tag-two { bottom: 22px; left: -2px; }
+      .strip-inner { grid-template-columns: 1fr; }
+      .strip-item { border-right: 0; border-bottom: 1px solid var(--line); padding: 17px; }
+      .strip-item:last-child { border-bottom: 0; }
+      section { padding: 66px 0; }
+      .cards, .path { grid-template-columns: 1fr; }
+      .card { min-height: 0; }
+      .footer-inner { align-items: flex-start; flex-direction: column; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="#top" aria-label="AMF Academy home">
+        <span class="mark">AMF</span>
+        <span>AMF ACADEMY<small>ALWAYS MOVING FORWARD</small></span>
+      </a>
+      <button class="menu-btn" id="menuBtn" aria-label="Open navigation" aria-expanded="false" aria-controls="navlinks">☰</button>
+      <nav class="navlinks" id="navlinks" aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#training">Training</a>
+        <a href="#values">Our values</a>
+        <a href="#faq">FAQ</a>
+        <a class="nav-cta" href="#join">Join the community ↗</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="eyebrow"><span class="dot"></span> Learn. Practice. Improve.</div>
+          <h1>Built to help you <em>move forward.</em></h1>
+          <p>AMF Academy is a place for VR players to sharpen their skills, build confidence, and learn alongside a community that values effort, teamwork, and respect.</p>
+          <div class="actions">
+            <a class="btn btn-primary" href="#join">Explore AMF Academy <span aria-hidden="true">↗</span></a>
+            <a class="btn btn-secondary" href="#training">See how training works</a>
+          </div>
+          <p class="note">A learning-focused program within the AMF community.</p>
+        </div>
+        <div class="hero-art" aria-label="Abstract AMF Academy emblem">
+          <div class="orb"></div>
+          <div class="emblem"><div class="emblem-inner"><strong>AMF</strong><span>ACADEMY</span></div></div>
+          <div class="float-tag tag-one"><small>THE MINDSET</small> Always improving</div>
+          <div class="float-tag tag-two"><small>THE STANDARD</small> Respect the team</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="strip" aria-label="Academy focus">
+      <div class="wrap strip-inner">
+        <div class="strip-item"><strong>SKILL DEVELOPMENT</strong><span>Build strong fundamentals</span></div>
+        <div class="strip-item"><strong>TEAMWORK FIRST</strong><span>Learn to communicate and adapt</span></div>
+        <div class="strip-item"><strong>POSITIVE COMPETITION</strong><span>Compete with respect</span></div>
+      </div>
+    </div>
+
+    <section id="about">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="kicker">What we're about</div>
+          <h2>More than mechanics.<br>It's how you grow.</h2>
+          <p>Academy is designed to help players improve over time—not just chase a win. The goal is to develop game sense, consistency, communication, and the habits that make a strong teammate.</p>
+        </div>
+        <div class="cards">
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">↗</div>
+            <h3>Improve with purpose</h3>
+            <p>Focus on practical skills, learn from mistakes, and turn each session into a chance to get better.</p>
+          </article>
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">⌁</div>
+            <h3>Play as a team</h3>
+            <p>Build communication, awareness, and trust so teammates can make better decisions together.</p>
+          </article>
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">✦</div>
+            <h3>Keep competition healthy</h3>
+            <p>Take competition seriously without taking it out on people. Respect is part of the standard.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="training">
+      <div class="wrap split">
+        <div>
+          <div class="kicker">The academy approach</div>
+          <h2>Train smart.<br>Stay coachable.</h2>
+          <p class="body-copy">Every player starts somewhere. Academy is about showing up ready to learn, listening to feedback, and putting in consistent effort. Training activities and expectations may vary by game, coach, and current program.</p>
+          <div class="actions" style="margin-top:25px">
+            <a class="btn btn-secondary" href="#join">Ask about training ↗</a>
+          </div>
+        </div>
+        <div class="principles">
+          <div class="principle"><span class="check">✓</span><div><h3>Fundamentals first</h3><p>Practice movement, positioning, awareness, and decision-making.</p></div></div>
+          <div class="principle"><span class="check">✓</span><div><h3>Feedback that helps</h3><p>Use clear, respectful feedback to identify what to work on next.</p></div></div>
+          <div class="principle"><span class="check">✓</span><div><h3>Consistency over ego</h3><p>Progress comes from effort, patience, and being willing to learn.</p></div></div>
+          <div class="principle"><span class="check">✓</span><div><h3>Respect everyone</h3><p>Keep sessions welcoming, constructive, and focused on improvement.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="values">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="kicker">Your path</div>
+          <h2>A simple path to progress.</h2>
+          <p>Whether you're new or experienced, focus on the next step—not someone else's timeline.</p>
+        </div>
+        <div class="path">
+          <article class="step"><div class="step-num">STEP 01</div><h3>Get connected</h3><p>Find the official AMF community, read its rules, and learn how Academy participation works.</p></article>
+          <article class="step"><div class="step-num">STEP 02</div><h3>Practice with intent</h3><p>Work on specific skills, communicate with your team, and ask questions when you need help.</p></article>
+          <article class="step"><div class="step-num">STEP 03</div><h3>Review and grow</h3><p>Take feedback onboard, notice your progress, and keep building good habits session by session.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="callout" id="join">
+          <div>
+            <div class="kicker">Ready to take the next step?</div>
+            <h2>Bring the effort.<br>We'll move forward together.</h2>
+            <p>Interested in AMF Academy? Join the official AMF community and ask the team about current Academy requirements, training opportunities, and availability.</p>
+          </div>
+          <!-- Replace the # below with the official AMF Discord invite before publishing. -->
+          <a class="btn btn-primary" href="#contact" id="joinButton">Join / contact AMF ↗</a>
+        </div>
+        <p class="note" id="contact">Before publishing, replace the placeholder link on the Join button with AMF's official Discord invite or application form.</p>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="kicker">Quick answers</div>
+          <h2>Frequently asked questions.</h2>
+        </div>
+        <div class="faq">
+          <details><summary>What is AMF Academy?</summary><p>AMF Academy is a learning-focused program within the AMF community intended to help players develop skills, teamwork, and game knowledge.</p></details>
+          <details><summary>Do I need to be an experienced player?</summary><p>No specific experience level is promised on this page. Reach out to the AMF team to learn about current entry requirements and which opportunities are available.</p></details>
+          <details><summary>Which games does Academy support?</summary><p>Supported games and training schedules can change. Check the official AMF community for the current program list and schedule.</p></details>
+          <details><summary>How do I join?</summary><p>Use the official AMF community invite or contact method. This website's Join button needs to be connected to the current official link before launch.</p></details>
+          <details><summary>What does AMF stand for?</summary><p>AMF stands for “Always Moving Forward”—a reminder to keep learning, stay respectful, and improve together.</p></details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <a class="brand" href="#top"><span class="mark">AMF</span><span>AMF ACADEMY<small>ALWAYS MOVING FORWARD</small></span></a>
+      <div>© <span id="year"></span> AMF Academy. Community, learning, and improvement.</div>
+      <div class="footer-links"><a href="#about">About</a><a href="#training">Training</a><a href="#faq">FAQ</a></div>
+    </div>
+  </footer>
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const nav = document.getElementById('navlinks');
+    menuBtn.addEventListener('click', () => {
+      const open = nav.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', String(open));
+      menuBtn.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
+      menuBtn.textContent = open ? '×' : '☰';
+    });
+    nav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      nav.classList.remove('open');
+      menuBtn.setAttribute('aria-expanded', 'false');
+      menuBtn.setAttribute('aria-label', 'Open navigation');
+      menuBtn.textContent = '☰';
+    }));
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
