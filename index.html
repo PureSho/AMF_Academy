@@ -569,8 +569,8 @@
             const data = await response.json();
 
             document.getElementById("amf-total-members").textContent =
-                Number.isFinite(data.members)
-                    ? data.members.toLocaleString()
+                Array.isArray(data.members)
+                    ? data.members.length.toLocaleString()
                     : "--";
 
             document.getElementById("amf-online-members").textContent =
