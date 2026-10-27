@@ -532,6 +532,64 @@
             </details>
         </div>
     </section>
+  <!-- AMF Live Server Statistics -->
+<section id="amf-server-stats">
+    <h2>AMF Server Statistics</h2>
+
+    <div class="stats-container">
+        <div class="stat-card">
+            <span class="stat-number" id="amf-total-members">--</span>
+            <span class="stat-label">Total Members</span>
+        </div>
+
+        <div class="stat-card">
+            <span class="stat-number" id="amf-online-members">--</span>
+            <span class="stat-label">Members Online</span>
+        </div>
+    </div>
+
+    <p id="amf-stats-updated">Loading server statistics...</p>
+</section>
+
+<script>
+    const AMF_WIDGET_API = "https://discord.com/api/guilds/1225532581047566337/widget.json";
+
+    async function updateAMFStats() {
+        const status = document.getElementById("amf-stats-updated");
+
+        try {
+            const response = await fetch(AMF_WIDGET_API, {
+                cache: "no-store"
+            });
+
+            if (!response.ok) {
+                throw new Error("Unable to load server statistics");
+            }
+
+            const data = await response.json();
+
+            document.getElementById("amf-total-members").textContent =
+                Number.isFinite(data.members)
+                    ? data.members.toLocaleString()
+                    : "--";
+
+            document.getElementById("amf-online-members").textContent =
+                Number.isFinite(data.presence_count)
+                    ? data.presence_count.toLocaleString()
+                    : "--";
+
+            status.textContent =
+                "Last updated: " + new Date().toLocaleTimeString();
+        } catch (error) {
+            status.textContent =
+                "Server statistics are temporarily unavailable.";
+            console.error("AMF statistics error:", error);
+        }
+    }
+
+    updateAMFStats();
+    setInterval(updateAMFStats, 30000);
+</script>
   <footer>
     <div class="wrap footer-inner">
       <a class="brand" href="#top"><span class="mark">AMF</span><span>AMF ACADEMY<small>ALWAYS MOVING FORWARD</small></span></a>
