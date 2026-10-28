@@ -40,11 +40,15 @@ body {
 }
 
 .orbit-one {
-  animation: orbit-rotate 28s linear infinite;
+  animation: orbit-rotate 8s linear infinite;
+  border-width: 2px;
+  box-shadow: 0 0 12px rgba(216, 179, 92, 0.25);
 }
 
 .orbit-two {
-  animation: orbit-rotate-reverse 34s linear infinite;
+  animation: orbit-rotate-reverse 12s linear infinite;
+  border-width: 2px;
+  box-shadow: 0 0 14px rgba(52, 124, 255, 0.3);
 }
 
 /* Premium hover glow */
