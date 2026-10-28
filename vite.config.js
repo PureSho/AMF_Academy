@@ -3,7 +3,7 @@ import react from "@vitejs/plugin-react";
 
 export default defineConfig({
   plugins: [react()],
-  base: "/AMF_Academy/",
+  base: "https://amf.net/",
   build: {
     outDir: "docs",
   },
