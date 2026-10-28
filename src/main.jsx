@@ -6,7 +6,7 @@ import "./style.css";
 
 createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="/AMF_Academy">
       <App />
     </BrowserRouter>
   </React.StrictMode>
