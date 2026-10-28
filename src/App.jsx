@@ -3,22 +3,22 @@ import { ArrowRight, Crosshair, Users, Trophy, Menu, X, Target, CalendarDays, Me
 import { useState } from "react";
 
 const nav = [
-  ["Home", "/"],
-  ["Leadership", "/leadership"],
-  ["Training", "/training"],
-  ["Events", "/events"],
-  ["Contact", "/contact"]
+  ["Home", "/AMF_Academy"],
+  ["Leadership", "/AMF_Academy/leadership"],
+  ["Training", "/AMF_Academy/training"],
+  ["Events", "/AMF_Academy/events"],
+  ["Contact", "/AMF_Academy/contact"]
 ];
 
 function Header() {
   const [open, setOpen] = useState(false);
   return <header className="header">
-    <Link className="brand" to="/" onClick={() => setOpen(false)}>
+    <Link className="brand" to="/AMF_Academy" onClick={() => setOpen(false)}>
       <span className="brand-mark">A</span><span><strong>AMF ACADEMY</strong><small>ALWAYS MOVING FORWARD</small></span>
     </Link>
     <button className="menu-toggle" aria-label="Toggle navigation" onClick={() => setOpen(!open)}>{open ? <X/> : <Menu/>}</button>
     <nav className={open ? "nav nav-open" : "nav"}>
-      {nav.map(([label, path]) => <NavLink key={path} to={path} end={path === "/"} onClick={() => setOpen(false)}>{label}</NavLink>)}
+      {nav.map(([label, path]) => <NavLink key={path} to={path} end={path === "/AMF_Academy"} onClick={() => setOpen(false)}>{label}</NavLink>)}
     </nav>
   </header>;
 }
@@ -38,7 +38,7 @@ function Home() {
         <p className="eyebrow">// POPULATION: ONE VR COMMUNITY</p>
         <h1>ALWAYS<br/><span>MOVING FORWARD.</span></h1>
         <p className="hero-text">Description of the AMF Academy community and its mission...</p>
-        <div className="actions"><Link className="button primary" to="/training">Explore training <ArrowRight size={17}/></Link><Link className="button outline" to="/contact">Join the community</Link></div>
+        <div className="actions"><Link className="button primary" to="/AMF_Academy/training">Explore training <ArrowRight size={17}/></Link><Link className="button outline" to="/contact">Join the community</Link></div>
         <div className="stats"><div><strong>01</strong><span>PLACEHOLDER</span></div><div><strong>02</strong><span>PLACEHOLDER</span></div><div><strong>03</strong><span>PLACEHOLDER</span></div></div>
       </div>
       <div className="hero-art" aria-label="Abstract blue and gold academy emblem"><div className="orbit orbit-one"></div><div className="orbit orbit-two"></div><div className="crest"><span>AMF</span><small>ACADEMY</small></div><div className="crosshair"><Crosshair size={42}/></div></div>
@@ -97,6 +97,6 @@ function NotFound() {
 
 export default function App() {
   return <><Header/><main><Routes>
-    <Route path="/" element={<Home/>}/><Route path="/leadership" element={<Leadership/>}/><Route path="/training" element={<Training/>}/><Route path="/events" element={<Events/>}/><Route path="/contact" element={<Contact/>}/><Route path="*" element={<NotFound/>}/>
+    <Route path="/AMF_Academy" element={<Home/>}/><Route path="/AMF_Academy/leadership" element={<Leadership/>}/><Route path="/AMF_Academy/training" element={<Training/>}/><Route path="/AMF_Academy/events" element={<Events/>}/><Route path="/AMF_Academy/contact" element={<Contact/>}/><Route path="*" element={<NotFound/>}/>
   </Routes></main><Footer/></>;
 }
