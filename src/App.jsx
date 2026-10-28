@@ -43,7 +43,7 @@ function Home() {
         <div className="actions"><Link className="button primary" to="/training">Explore training <ArrowRight size={17}/></Link><Link className="button outline" to="/contact">Join the community</Link></div>
         <div className="stats"><div><strong>01</strong><span>PLACEHOLDER</span></div><div><strong>02</strong><span>PLACEHOLDER</span></div><div><strong>03</strong><span>PLACEHOLDER</span></div></div>
       </div>
-      <div className="hero-art" aria-label="Abstract blue and gold academy emblem"><div className="orbit orbit-one"></div><div className="orbit orbit-two"></div><div className="crest"><span>AMF</span><small>ACADEMY</small></div><div className="crosshair"><Crosshair size={42}/></div></div>
+      <div className="hero-art" aria-label="Abstract blue and gold academy emblem"><div className="orbit orbit-one"></div><div className="orbit orbit-two"></div><img style="width: 250px; height: 250px;" src="/AMF_Academy/images/AMF_Pop1Guy_Logo.png" alt="AMF Academy Logo"><div className="crosshair"><Crosshair size={42}/></div></div>
     </section>
     <section className="section"><p className="eyebrow">// WHAT WE STAND FOR</p><h2>PLACEHOLDER<span>PLACEHOLDER</span></h2>
       <div className="cards three">
