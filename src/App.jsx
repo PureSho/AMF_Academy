@@ -13,12 +13,12 @@ const nav = [
 function Header() {
   const [open, setOpen] = useState(false);
   return <header className="header">
-    <Link className="brand" to="/" onClick={() => setOpen(false)}>
+    <Link className="brand" to="/AMF_Academy" onClick={() => setOpen(false)}>
       <span className="brand-mark">A</span><span><strong>AMF ACADEMY</strong><small>ALWAYS MOVING FORWARD</small></span>
     </Link>
     <button className="menu-toggle" aria-label="Toggle navigation" onClick={() => setOpen(!open)}>{open ? <X/> : <Menu/>}</button>
     <nav className={open ? "nav nav-open" : "nav"}>
-      {nav.map(([label, path]) => <NavLink key={path} to={path} end={path === "/"} onClick={() => setOpen(false)}>{label}</NavLink>)}
+      {nav.map(([label, path]) => <NavLink key={path} to={path} end={path === "/AMF_Academy"} onClick={() => setOpen(false)}>{label}</NavLink>)}
     </nav>
   </header>;
 }
