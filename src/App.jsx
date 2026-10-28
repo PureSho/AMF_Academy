@@ -15,7 +15,7 @@ function Header() {
   return <header className="header">
     <Link className="brand" to="/" onClick={() => setOpen(false)}>
       <span className="brand-mark">
-        <img style={{ width: "50px", height: "50px" }} src="/AMF_Academy/images/AMF_Main_Logo.png" alt="AMF Academy Logo"/>
+        <img style={{ width: "50px", height: "50px" }} src="/images/AMF_Main_Logo.png" alt="AMF Academy Logo"/>
       </span>
     </Link>
     <button className="menu-toggle" aria-label="Toggle navigation" onClick={() => setOpen(!open)}>{open ? <X/> : <Menu/>}</button>
