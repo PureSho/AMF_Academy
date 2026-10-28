@@ -84,7 +84,7 @@ function Events() {
 function Contact() {
   return <><PageTitle eyebrow="CONTACT" title="PLACEHOLDER" text="PLACEHOLDER"/>
     <section className="section"><p className="eyebrow">// COMMUNITY CHANNELS</p><h2>...<span>...</span></h2><div className="cards two">
-      <article className="card"><MessageCircle/><h3>Discord</h3><p><Link href="https://discord.gg/amfacademy">Click here to join the AMF discord</Link></p><span className="tag">Discord Needed</span></article>
+      <article className="card"><MessageCircle/><h3>Discord</h3><p Link href="https://discord.gg/amfacademy">Click here to join the AMF discord</p><span className="tag">Discord Needed</span></article>
       <article className="card"><ArrowRight/><h3>Email</h3><p>PLACEHOLDER</p><span className="tag">EMAIL NEEDED</span></article>
     </div></section>
     <section className="section muted-section"><p className="eyebrow">// BEFORE YOU MESSAGE</p><h2>Help us point you <span>in the right direction.</span></h2><ul className="tips"><li>PLACEHOLDER</li><li>PLACEHOLDER</li><li>PLACEHOLDER.</li></ul></section>
